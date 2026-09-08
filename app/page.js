@@ -116,32 +116,31 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* SKETCH TO SPACE (static process band) */}
-      <section id="process">
+      {/* FIND YOUR PEOPLE (static) */}
+      <section id="find">
         <div className="wrap">
-          <div className="process-grid">
+          <div className="find-grid">
             <div>
-              <h2>From sketch<br />to space<span className="red">.</span></h2>
-              <p className="sub">Every building begins before the building exists.</p>
-              <Link className="process-cta" href="/projects">Explore the process →</Link>
+              <div className="eyebrow-dot"><span className="dot" /><h2>Find your people<span className="red">.</span></h2></div>
+              <p className="section-lede">Architects, designers, studios, makers and more.</p>
+              <div className="search-row">
+                <select><option>What are you looking for?</option></select>
+                <select><option>Where?</option></select>
+                <button>Search →</button>
+              </div>
+              <div className="filter-tabs">
+                <a href="#">Architects</a>
+                <a href="#" className="active">Designers</a>
+                <a href="#">Studios</a>
+                <a href="#">Makers</a>
+                <a href="#">Mentors</a>
+                <a href="#">Material Brands</a>
+              </div>
             </div>
-            <div className="process-strip">
-              {[
-                {label: 'Sketch', img: '/images/process/sketch.png'},
-                {label: 'Concept', img: '/images/process/concept.png'},
-                {label: 'Drawing', img: '/images/process/drawing.png'},
-                {label: 'Site', img: '/images/process/site.png'},
-                {label: 'Build', img: '/images/process/build.png'},
-                {label: 'Space', img: '/images/process/space.png'},
-              ].map(({label, img}, i, arr) => (
-                <div key={label} style={{display: 'contents'}}>
-                  <div className="process-step">
-                    <img className="ph" src={img} alt={label} />
-                    <div className="lbl">{label.toUpperCase()}</div>
-                  </div>
-                  {i < arr.length - 1 && <div className="process-arrow">→</div>}
-                </div>
-              ))}
+            <div className="submit-box">
+              <h3>Your work<br />deserves a story<span className="red">.</span></h3>
+              <p>Have a project, idea or practice worth sharing?</p>
+              <a className="go" href="#">Submit Your Work →</a>
             </div>
           </div>
         </div>
@@ -221,36 +220,6 @@ export default async function HomePage() {
               <div className="band-stat"><div className="n">500+</div><div className="l">Projects</div></div>
               <div className="band-stat"><div className="n">100+</div><div className="l">Practices</div></div>
               <div className="band-stat"><div className="n">50+</div><div className="l">Learning Programs</div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FIND YOUR PEOPLE (static) */}
-      <section id="find">
-        <div className="wrap">
-          <div className="find-grid">
-            <div>
-              <div className="eyebrow-dot"><span className="dot" /><h2>Find your people<span className="red">.</span></h2></div>
-              <p className="section-lede">Architects, designers, studios, makers and more.</p>
-              <div className="search-row">
-                <select><option>What are you looking for?</option></select>
-                <select><option>Where?</option></select>
-                <button>Search →</button>
-              </div>
-              <div className="filter-tabs">
-                <a href="#">Architects</a>
-                <a href="#" className="active">Designers</a>
-                <a href="#">Studios</a>
-                <a href="#">Makers</a>
-                <a href="#">Mentors</a>
-                <a href="#">Material Brands</a>
-              </div>
-            </div>
-            <div className="submit-box">
-              <h3>Your work<br />deserves a story<span className="red">.</span></h3>
-              <p>Have a project, idea or practice worth sharing?</p>
-              <a className="go" href="#">Submit Your Work →</a>
             </div>
           </div>
         </div>
