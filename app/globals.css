@@ -233,6 +233,20 @@ footer{padding:30px 0;border-top:1px solid var(--line);}
 .submit-box p{font-size:13.5px;color:var(--grey);margin-top:14px;}
 .submit-box .go{display:inline-flex;gap:7px;font-size:14px;font-weight:600;margin-top:18px;}
 
+/* find your people now sits where the dark process section used to \u2014 carry the black theme over */
+#find{background:var(--black);color:var(--white);}
+#find .section-lede{color:#b8b7b3;}
+#find .filter-tabs{color:#9a9a97;}
+#find .filter-tabs a.active{color:var(--white);border-color:var(--white);}
+#find .search-row{border-color:#3a3a38;}
+#find .search-row select,#find .search-row input{color:var(--white);border-right-color:#3a3a38;}
+#find .search-row select option{color:var(--black);}
+#find .search-row button{background:var(--white);color:var(--black);}
+#find .search-row button:hover{background:var(--red);color:var(--white);}
+#find .submit-box{background:#171716;}
+#find .submit-box p{color:#b8b7b3;}
+#find .submit-box .go{color:var(--white);}
+
 /* ---------- weekly newsletter ---------- */
 #weekly{border-top:1px solid var(--line);}
 .weekly-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;}
