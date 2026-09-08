@@ -1,7 +1,8 @@
 import Link from 'next/link'
 import { client } from '../../lib/sanity'
 import { urlFor } from '../../lib/image'
-import { upcomingEventsQuery, pastEventsQuery } from '../../lib/queries'
+import { upcomingEventsQuery, pastEventsQuery, allPeopleQuery } from '../../lib/queries'
+import PeopleDirectory from '../../components/PeopleDirectory'
 
 export const revalidate = 60
 
@@ -18,7 +19,8 @@ function formatDate(iso) {
 }
 
 export default async function CommunityPage() {
-  const [upcoming, past] = await Promise.all([
+  const [people, upcoming, past] = await Promise.all([
+    client.fetch(allPeopleQuery),
     client.fetch(upcomingEventsQuery),
     client.fetch(pastEventsQuery),
   ])
@@ -28,6 +30,17 @@ export default async function CommunityPage() {
       <div className="crumb"><Link href="/">Home</Link><span>/</span><span style={{color: 'var(--black)'}}>Community</span></div>
 
       <section style={{paddingTop: 0}}>
+        <div className="section-head">
+          <div className="eyebrow-dot"><span className="dot" /><h2>Find Your People</h2></div>
+        </div>
+        {people.length === 0 ? (
+          <div className="empty-state">No people published yet — add some in the Admin Panel.</div>
+        ) : (
+          <PeopleDirectory people={people} />
+        )}
+      </section>
+
+      <section>
         <div className="section-head">
           <div className="eyebrow-dot"><span className="dot" /><h2>Upcoming Events</h2></div>
         </div>
