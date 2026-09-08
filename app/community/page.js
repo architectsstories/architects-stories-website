@@ -18,7 +18,12 @@ function formatDate(iso) {
   })
 }
 
-export default async function CommunityPage() {
+export default async function CommunityPage({ searchParams }) {
+  const params = await searchParams
+  const q = params?.q || ''
+  const location = params?.location || ''
+  const category = params?.category || ''
+
   const [people, upcoming, past] = await Promise.all([
     client.fetch(allPeopleQuery),
     client.fetch(upcomingEventsQuery),
@@ -36,7 +41,7 @@ export default async function CommunityPage() {
         {people.length === 0 ? (
           <div className="empty-state">No people published yet — add some in the Admin Panel.</div>
         ) : (
-          <PeopleDirectory people={people} />
+          <PeopleDirectory people={people} initialQuery={q} initialLocation={location} initialCategory={category} />
         )}
       </section>
 

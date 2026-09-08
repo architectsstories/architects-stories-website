@@ -116,25 +116,25 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* FIND YOUR PEOPLE (static) */}
+      {/* FIND YOUR PEOPLE (search + category links to /community) */}
       <section id="find">
         <div className="wrap">
           <div className="find-grid">
             <div>
               <div className="eyebrow-dot"><span className="dot" /><h2>Find your people<span className="red">.</span></h2></div>
               <p className="section-lede">Architects, designers, studios, makers and more.</p>
-              <div className="search-row">
-                <select><option>What are you looking for?</option></select>
-                <select><option>Where?</option></select>
-                <button>Search →</button>
-              </div>
+              <form className="search-row" action="/community" method="GET">
+                <input type="text" name="q" placeholder="What are you looking for?" />
+                <input type="text" name="location" placeholder="Where?" />
+                <button type="submit">Search →</button>
+              </form>
               <div className="filter-tabs">
-                <a href="#">Architects</a>
-                <a href="#" className="active">Designers</a>
-                <a href="#">Studios</a>
-                <a href="#">Makers</a>
-                <a href="#">Mentors</a>
-                <a href="#">Material Brands</a>
+                <Link href="/community?category=Architects">Architects</Link>
+                <Link href="/community?category=Designers">Designers</Link>
+                <Link href="/community?category=Studios">Studios</Link>
+                <Link href="/community?category=Makers">Makers</Link>
+                <Link href="/community?category=Mentors">Mentors</Link>
+                <Link href="/community?category=Material%20Brands">Material Brands</Link>
               </div>
             </div>
             <div className="submit-box">
